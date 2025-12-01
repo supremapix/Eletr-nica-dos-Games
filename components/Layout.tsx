@@ -29,10 +29,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-8 font-medium text-gray-700">
               <Link to="/" className="hover:text-primary transition-colors">Início</Link>
-              <a href="#services" className="hover:text-primary transition-colors">Serviços</a>
-              <a href="#locations" className="hover:text-primary transition-colors">Regiões</a>
-              <a href="#comparison" className="hover:text-primary transition-colors">Preços</a>
-              <a href="#contact" className="px-4 py-2 bg-primary text-white rounded-md hover:bg-blue-700 transition-colors">
+              <Link to="/servicos" className="hover:text-primary transition-colors">Serviços</Link>
+              <a href="/#locations" className="hover:text-primary transition-colors">Regiões</a>
+              <a href="/#comparison" className="hover:text-primary transition-colors">Preços</a>
+              <a href="/#contact" className="px-4 py-2 bg-primary text-white rounded-md hover:bg-blue-700 transition-colors">
                 Contato
               </a>
             </nav>
@@ -53,10 +53,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="lg:hidden bg-white border-t border-gray-100 py-4 absolute w-full shadow-xl">
             <div className="container mx-auto px-4 flex flex-col gap-4">
               <Link to="/" className="block py-2 text-gray-700" onClick={() => setIsMenuOpen(false)}>Início</Link>
-              <a href="#services" className="block py-2 text-gray-700" onClick={() => setIsMenuOpen(false)}>Serviços</a>
-              <a href="#locations" className="block py-2 text-gray-700" onClick={() => setIsMenuOpen(false)}>Cidades e Bairros</a>
-              <a href="#comparison" className="block py-2 text-gray-700" onClick={() => setIsMenuOpen(false)}>Comparar Modelos</a>
-              <a href="#contact" className="block py-2 text-primary font-bold" onClick={() => setIsMenuOpen(false)}>Fale Conosco</a>
+              <Link to="/servicos" className="block py-2 text-gray-700" onClick={() => setIsMenuOpen(false)}>Serviços</Link>
+              <a href="/#locations" className="block py-2 text-gray-700" onClick={() => setIsMenuOpen(false)}>Cidades e Bairros</a>
+              <a href="/#comparison" className="block py-2 text-gray-700" onClick={() => setIsMenuOpen(false)}>Comparar Modelos</a>
+              <a href="/#contact" className="block py-2 text-primary font-bold" onClick={() => setIsMenuOpen(false)}>Fale Conosco</a>
             </div>
           </div>
         )}
