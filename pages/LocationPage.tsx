@@ -182,8 +182,8 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
                    <p className="text-sm text-gray-500 text-center mb-6">
                      Fale diretamente com o técnico pelo WhatsApp.
                    </p>
-                   <a 
-                     href={`https://wa.me/${PHONE_NUMBER}?text=Olá, sou de ${name} e gostaria de um orçamento.`}
+                   <a
+                     href={`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(`Olá, vim da Página de ${locationLabel} ${name}. Gostaria de um orçamento.`)}`}
                      className="block w-full bg-whatsapp text-white text-center font-bold py-3 rounded-lg hover:bg-green-600 transition-colors mb-4"
                    >
                      Chamar no WhatsApp

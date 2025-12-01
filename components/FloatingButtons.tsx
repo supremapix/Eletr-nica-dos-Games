@@ -1,9 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Phone, ArrowUp } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 import { PHONE_NUMBER } from '../constants';
 
 const FloatingButtons: React.FC = () => {
   const [showScroll, setShowScroll] = useState(false);
+  const location = useLocation();
+
+  const getWhatsAppContext = () => {
+    const path = location.pathname;
+    if (path === '/') return 'Olá, vim através do site (Página Inicial)';
+    if (path === '/servicos') return 'Olá, vim através do site (Página de Serviços)';
+    if (path.includes('/cidade/')) return `Olá, vim através do site (Página de Cidade)`;
+    if (path.includes('/bairro/')) return `Olá, vim através do site (Página de Bairro)`;
+    return 'Olá, vim através do site';
+  };
 
   useEffect(() => {
     const checkScrollTop = () => {
@@ -33,7 +44,7 @@ const FloatingButtons: React.FC = () => {
           <Phone size={24} />
         </a>
         <a
-          href={`https://wa.me/${PHONE_NUMBER}`}
+          href={`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(getWhatsAppContext())}`}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-whatsapp text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all transform hover:scale-110 flex items-center justify-center"

@@ -44,8 +44,8 @@ const Home: React.FC = () => {
                 Assistência técnica especializada em PlayStation, Xbox, Nintendo, PCs Gamers e Notebooks. Seu equipamento em mãos de quem entende.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <a 
-                  href={`https://wa.me/${PHONE_NUMBER}`}
+                <a
+                  href={`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent('Olá, gostaria de um orçamento (via Página Inicial)')}`}
                   className="bg-whatsapp hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2"
                 >
                   <MessageCircle size={20} />
@@ -89,7 +89,7 @@ const Home: React.FC = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">{service.title}</h3>
                   <p className="text-gray-600 mb-6">{service.description}</p>
-                  <a href={`https://wa.me/${PHONE_NUMBER}?text=Tenho interesse em ${service.title}`} className="text-primary font-semibold hover:underline flex items-center gap-1">
+                  <a href={`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(`Olá, vim da Página Inicial. Tenho interesse em ${service.title}`)}`} className="text-primary font-semibold hover:underline flex items-center gap-1">
                     Saiba mais <ChevronRight size={16} />
                   </a>
                 </div>

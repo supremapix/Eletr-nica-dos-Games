@@ -42,8 +42,8 @@ const ServicesPage: React.FC = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {SERVICES.map((service) => {
               const IconComponent = iconMap[service.iconName] || HelpCircle;
-              const whatsappMessage = `Olá, gostaria de um orçamento para o serviço: ${service.title}`;
-              
+              const whatsappMessage = `Olá, vim da Página de Serviços. Gostaria de um orçamento para: ${service.title}`;
+
               return (
                 <div key={service.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col">
                   <div className="p-8 flex-grow">
@@ -97,8 +97,8 @@ const ServicesPage: React.FC = () => {
           <p className="text-gray-600 mb-8 max-w-xl mx-auto">
             Entre em contato conosco diretamente. Realizamos diversos tipos de reparos em eletrônicos e podemos analisar o seu caso específico.
           </p>
-          <a 
-            href={`https://wa.me/${PHONE_NUMBER}`}
+          <a
+            href={`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent('Olá, vim da Página de Serviços e gostaria de falar com um técnico')}`}
             className="inline-flex items-center gap-2 bg-primary hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full shadow-lg transition-transform hover:-translate-y-1"
           >
             Fale com um Técnico
