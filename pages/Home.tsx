@@ -30,18 +30,19 @@ const Home: React.FC = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gray-900 text-white py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
+      <section className="relative bg-gradient-animated text-white py-20 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
           <img src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Background Tech" className="w-full h-full object-cover" />
         </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10 text-center lg:text-left">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="bg-primary px-3 py-1 rounded text-sm font-bold uppercase tracking-wider mb-4 inline-block">15+ Anos de Experiência</span>
-              <h2 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+            <div className="animate-fade-in-up">
+              <span className="bg-primary px-3 py-1 rounded text-sm font-bold uppercase tracking-wider mb-4 inline-block animate-pulse-slow">15+ Anos de Experiência</span>
+              <h2 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight animate-slide-in-left">
                 Eletrônica dos Games <br /><span className="text-blue-400">Fazendinha</span>
               </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-lg mx-auto lg:mx-0">
+              <p className="text-xl text-gray-300 mb-8 max-w-lg mx-auto lg:mx-0 animate-fade-in">
                 Assistência técnica especializada em PlayStation, Xbox, Nintendo, PCs Gamers e Notebooks. Seu equipamento em mãos de quem entende.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -60,11 +61,12 @@ const Home: React.FC = () => {
                 </a>
               </div>
             </div>
-            <div className="hidden lg:block relative">
+            <div className="hidden lg:block relative animate-float">
+              <div className="absolute -inset-4 bg-blue-500 rounded-lg opacity-20 blur-xl"></div>
               <img
                 src="https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt="Reparo de Games"
-                className="rounded-lg shadow-2xl border-4 border-gray-800 rotate-3 hover:rotate-0 transition-all duration-500"
+                className="relative rounded-lg shadow-2xl border-4 border-blue-400 rotate-3 hover:rotate-0 transition-all duration-500 hover:scale-105"
               />
             </div>
           </div>
@@ -84,7 +86,7 @@ const Home: React.FC = () => {
               const IconComponent = iconMap[service.iconName] || HelpCircle;
               
               return (
-                <div key={service.id} className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow border-t-4 border-primary group">
+                <div key={service.id} className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all border-t-4 border-primary group hover-lift animate-scale-in">
                   <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                     <IconComponent size={32} className="text-primary group-hover:text-white transition-colors" />
                   </div>
@@ -105,8 +107,8 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="grid grid-cols-2 gap-4">
-               <img src="https://images.pexels.com/photos/163117/circuit-circuit-board-resistor-computer-163117.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Laboratório 1" className="rounded-lg shadow-lg w-full h-full object-cover" />
-               <img src="https://images.pexels.com/photos/2582928/pexels-photo-2582928.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Laboratório 2" className="rounded-lg shadow-lg w-full h-full object-cover mt-8" />
+               <img src="https://images.pexels.com/photos/163130/circuit-circuit-board-resistor-computer-163130.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Laboratório 1" className="rounded-lg shadow-lg w-full h-full object-cover hover-lift" />
+               <img src="https://images.pexels.com/photos/2582928/pexels-photo-2582928.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Laboratório 2" className="rounded-lg shadow-lg w-full h-full object-cover mt-8 hover-lift" />
             </div>
             <div>
               <h2 className="text-3xl font-bold text-secondary mb-6">Por Que Escolher a Eletrônica dos Games?</h2>

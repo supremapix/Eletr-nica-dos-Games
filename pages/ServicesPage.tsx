@@ -27,14 +27,17 @@ const ServicesPage: React.FC = () => {
       />
 
       {/* Hero Section */}
-      <section className="bg-primary text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Nossos Serviços</h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Soluções completas em assistência técnica especializada. 
+      <section className="relative bg-gradient-animated text-white py-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 opacity-90"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">Nossos Serviços</h1>
+          <p className="text-xl text-blue-100 max-w-2xl mx-auto animate-fade-in">
+            Soluções completas em assistência técnica especializada.
             Do diagnóstico ao reparo, cuidamos do seu equipamento com profissionalismo.
           </p>
         </div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-400 rounded-full opacity-10 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-300 rounded-full opacity-10 blur-3xl"></div>
       </section>
 
       {/* Services Grid */}
@@ -45,7 +48,7 @@ const ServicesPage: React.FC = () => {
               const IconComponent = iconMap[service.iconName] || HelpCircle;
 
               return (
-                <div key={service.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col">
+                <div key={service.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col hover-lift animate-scale-in">
                   <div className="p-8 flex-grow">
                     <div className="w-16 h-16 bg-blue-50 text-primary rounded-2xl flex items-center justify-center mb-6 transform transition-transform group-hover:scale-110">
                       <IconComponent size={36} strokeWidth={1.5} />

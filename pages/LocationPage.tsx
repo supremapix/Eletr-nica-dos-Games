@@ -44,21 +44,24 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
       />
 
       {/* Location Hero */}
-      <section className="bg-gray-900 text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <span className="inline-block bg-primary px-3 py-1 rounded text-sm font-bold mb-4">
+      <section className="relative bg-gradient-animated text-white py-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 opacity-95"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <span className="inline-block bg-primary px-3 py-1 rounded text-sm font-bold mb-4 animate-pulse-slow">
             Atendimento Especializado {isCity ? 'em' : 'no'}
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">{name}</h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">{name}</h1>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8 animate-fade-in">
             A Eletrônica dos Games oferece o melhor serviço de reparo e manutenção para os moradores do {locationLabel} {name}.
           </p>
           <div className="flex justify-center gap-4">
-             <a href="#contact-local" className="bg-whatsapp hover:bg-green-600 px-6 py-3 rounded-lg font-bold flex items-center gap-2 transition-all">
+             <a href="#contact-local" className="bg-whatsapp hover:bg-green-600 px-6 py-3 rounded-lg font-bold flex items-center gap-2 transition-all hover:scale-105 animate-scale-in">
                 Orçamento Grátis
              </a>
           </div>
         </div>
+        <div className="absolute top-10 right-10 w-40 h-40 bg-blue-500 rounded-full opacity-10 blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-10 left-10 w-60 h-60 bg-blue-400 rounded-full opacity-10 blur-3xl animate-pulse-slow"></div>
       </section>
 
       {/* Main Content Sections */}

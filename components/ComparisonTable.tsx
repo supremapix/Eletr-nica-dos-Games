@@ -23,18 +23,18 @@ const ComparisonTable: React.FC = () => {
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
               {PRICING_DATA.map((item, index) => (
-                <tr key={index} className="hover:bg-gray-50 transition-colors">
+                <tr key={index} className="hover:bg-blue-50 transition-all hover-lift">
                   <td className="p-4 font-medium text-gray-900">{item.equipment}</td>
                   <td className="p-4 text-gray-600">{item.problem}</td>
                   <td className="p-4 text-primary font-bold">{item.price}</td>
                   <td className="p-4 text-gray-600">{item.time}</td>
                   <td className="p-4 text-green-600 font-medium">{item.warranty}</td>
                   <td className="p-4">
-                    <a 
+                    <a
                       href={`https://wa.me/${PHONE_NUMBER}?text=Olá, gostaria de um orçamento para ${item.equipment}.`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-whatsapp hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm font-bold transition-colors inline-block"
+                      className="bg-whatsapp hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm font-bold transition-all inline-block hover:scale-105"
                     >
                       Orçamento
                     </a>

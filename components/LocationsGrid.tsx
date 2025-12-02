@@ -55,9 +55,9 @@ const LocationsGrid: React.FC = () => {
                   <Link
                     key={city}
                     to={`/cidade/${createSlug(city)}`}
-                    className="flex items-center gap-2 p-3 rounded border border-gray-200 hover:border-primary hover:text-primary transition-all text-sm text-gray-700 group"
+                    className="flex items-center gap-2 p-3 rounded border border-gray-200 hover:border-primary hover:text-primary transition-all text-sm text-gray-700 group hover-lift"
                   >
-                    <MapPin size={16} className="text-gray-400 group-hover:text-primary" />
+                    <MapPin size={16} className="text-gray-400 group-hover:text-primary transition-colors" />
                     {city}
                   </Link>
                 ))
@@ -65,9 +65,9 @@ const LocationsGrid: React.FC = () => {
                   <Link
                     key={neighborhood}
                     to={`/bairro/${createSlug(neighborhood)}`}
-                    className="flex items-center gap-2 p-3 rounded border border-gray-200 hover:border-primary hover:text-primary transition-all text-sm text-gray-700 group"
+                    className="flex items-center gap-2 p-3 rounded border border-gray-200 hover:border-primary hover:text-primary transition-all text-sm text-gray-700 group hover-lift"
                   >
-                    <MapPin size={16} className="text-gray-400 group-hover:text-primary" />
+                    <MapPin size={16} className="text-gray-400 group-hover:text-primary transition-colors" />
                     {neighborhood}
                   </Link>
                 ))}
