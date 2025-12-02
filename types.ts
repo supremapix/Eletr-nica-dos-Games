@@ -21,4 +21,15 @@ export interface Testimonial {
   rating: number;
 }
 
+export interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
+}
+
+export interface DeviceCategory {
+  category: string;
+  brands: { brand: string; models: string[] }[];
+}
+
 export type LocationType = 'city' | 'neighborhood';

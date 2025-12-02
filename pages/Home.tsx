@@ -1,6 +1,6 @@
 import React from 'react';
 import SEO from '../components/SEO';
-import { SERVICES, TESTIMONIALS, PHONE_NUMBER } from '../constants';
+import { SERVICES, TESTIMONIALS, PHONE_NUMBER, WHATSAPP_DEFAULT_MESSAGE } from '../constants';
 import { 
   Gamepad2, Cpu, CircuitBoard, Laptop, Smartphone, Wrench, 
   HelpCircle, ChevronRight, MessageCircle, Check, Quote, Star, MapPin 
@@ -8,6 +8,7 @@ import {
 import ComparisonTable from '../components/ComparisonTable';
 import ContactForm from '../components/ContactForm';
 import LocationsGrid from '../components/LocationsGrid';
+import FAQ from '../components/FAQ';
 
 // Explicit mapping for dynamic icons to ensure safety and proper bundling
 const iconMap: Record<string, React.ElementType> = {
@@ -31,7 +32,7 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="relative bg-gray-900 text-white py-20 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 opacity-30">
-          <img src="https://picsum.photos/seed/tech1/1920/1080" alt="Background Tech" className="w-full h-full object-cover" />
+          <img src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Background Tech" className="w-full h-full object-cover" />
         </div>
         <div className="container mx-auto px-4 relative z-10 text-center lg:text-left">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -45,7 +46,7 @@ const Home: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
-                  href={`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent('Olá, gostaria de um orçamento (via Página Inicial)')}`}
+                  href={`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(WHATSAPP_DEFAULT_MESSAGE)}`}
                   className="bg-whatsapp hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2"
                 >
                   <MessageCircle size={20} />
@@ -60,10 +61,10 @@ const Home: React.FC = () => {
               </div>
             </div>
             <div className="hidden lg:block relative">
-              <img 
-                src="https://picsum.photos/seed/console/600/400" 
-                alt="Reparo de Games" 
-                className="rounded-lg shadow-2xl border-4 border-gray-800 rotate-3 hover:rotate-0 transition-all duration-500" 
+              <img
+                src="https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Reparo de Games"
+                className="rounded-lg shadow-2xl border-4 border-gray-800 rotate-3 hover:rotate-0 transition-all duration-500"
               />
             </div>
           </div>
@@ -89,7 +90,7 @@ const Home: React.FC = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">{service.title}</h3>
                   <p className="text-gray-600 mb-6">{service.description}</p>
-                  <a href={`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(`Olá, vim da Página Inicial. Tenho interesse em ${service.title}`)}`} className="text-primary font-semibold hover:underline flex items-center gap-1">
+                  <a href={`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(WHATSAPP_DEFAULT_MESSAGE)}`} className="text-primary font-semibold hover:underline flex items-center gap-1">
                     Saiba mais <ChevronRight size={16} />
                   </a>
                 </div>
@@ -104,8 +105,8 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="grid grid-cols-2 gap-4">
-               <img src="https://picsum.photos/seed/tech2/300/300" alt="Laboratório 1" className="rounded-lg shadow-lg w-full h-full object-cover" />
-               <img src="https://picsum.photos/seed/tech3/300/300" alt="Laboratório 2" className="rounded-lg shadow-lg w-full h-full object-cover mt-8" />
+               <img src="https://images.pexels.com/photos/163117/circuit-circuit-board-resistor-computer-163117.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Laboratório 1" className="rounded-lg shadow-lg w-full h-full object-cover" />
+               <img src="https://images.pexels.com/photos/2582928/pexels-photo-2582928.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Laboratório 2" className="rounded-lg shadow-lg w-full h-full object-cover mt-8" />
             </div>
             <div>
               <h2 className="text-3xl font-bold text-secondary mb-6">Por Que Escolher a Eletrônica dos Games?</h2>
@@ -159,6 +160,9 @@ const Home: React.FC = () => {
 
       {/* Locations */}
       <LocationsGrid />
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-white">

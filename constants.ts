@@ -1,8 +1,9 @@
-import { PricingItem, ServiceItem, Testimonial } from './types';
+import { PricingItem, ServiceItem, Testimonial, FAQItem, DeviceCategory } from './types';
 
 export const PHONE_NUMBER = '554132459051';
 export const PHONE_DISPLAY = '(41) 3245-9051';
 export const ADDRESS = 'Rua João Dembinski, 1447 - Fazendinha, Curitiba - PR';
+export const WHATSAPP_DEFAULT_MESSAGE = 'Olá vi seu site e *gostaria de saber sobre:*';
 
 export const CITIES = [
   "Curitiba", "Adrianópolis", "Agudos do Sul", "Almirante Tamandaré", "Araucária",
@@ -84,4 +85,84 @@ export const TESTIMONIALS: Testimonial[] = [
   { id: 4, name: 'Beatriz Silva', location: 'Portão', text: 'Atendimento nota 10 pelo WhatsApp e serviço impecável na troca da tela do meu iPhone.', rating: 5 },
   { id: 5, name: 'João Paulo', location: 'Campo Comprido', text: 'Montaram meu PC Gamer com um cable management perfeito. Recomendo demais!', rating: 5 },
   { id: 6, name: 'Fernanda Costa', location: 'Pinheirinho', text: 'Honestidade é o forte deles. O problema era simples e não me cobraram nada a mais.', rating: 5 },
+];
+
+export const FAQ_ITEMS: FAQItem[] = [
+  {
+    id: 'faq-1',
+    question: 'Quanto tempo leva para fazer o diagnóstico do meu dispositivo?',
+    answer: 'Na maioria dos casos, conseguimos realizar o diagnóstico em até 24 horas. Para problemas mais complexos, pode levar até 48 horas, mas sempre mantemos o cliente informado sobre o andamento.'
+  },
+  {
+    id: 'faq-2',
+    question: 'A unidade da Fazendinha atende finais de semana?',
+    answer: 'Sim, atendemos aos sábados das 9h às 13h. Aos domingos e feriados, nossa loja física está fechada, mas você pode entrar em contato via WhatsApp para agendar atendimentos para o próximo dia útil.'
+  },
+  {
+    id: 'faq-3',
+    question: 'Vocês oferecem serviço de busca e entrega na região?',
+    answer: 'Sim, para a região da Fazendinha e bairros próximos, oferecemos o serviço de busca e entrega mediante agendamento prévio. Consulte as taxas e disponibilidade ao entrar em contato.'
+  },
+  {
+    id: 'faq-4',
+    question: 'O diagnóstico é realmente gratuito?',
+    answer: 'Sim, o diagnóstico é totalmente gratuito em nossa unidade da Fazendinha. Você só paga se aprovar o orçamento e decidir realizar o reparo conosco.'
+  },
+  {
+    id: 'faq-5',
+    question: 'Quais formas de pagamento são aceitas na unidade Fazendinha?',
+    answer: 'Aceitamos pagamentos em dinheiro, PIX, cartões de débito e crédito (em até 12x com juros), além de boleto bancário para empresas cadastradas.'
+  },
+  {
+    id: 'faq-6',
+    question: 'Vocês trabalham com peças originais para notebooks e smartphones?',
+    answer: 'Sim, trabalhamos com peças originais para a maioria dos dispositivos. Em alguns casos específicos, oferecemos também a opção de peças compatíveis de alta qualidade, sempre com total transparência ao cliente.'
+  },
+  {
+    id: 'faq-7',
+    question: 'É possível acompanhar o status do meu reparo online?',
+    answer: 'Sim, após deixar seu dispositivo conosco, você receberá um código de acompanhamento que pode ser consultado em nosso site. Além disso, enviamos atualizações por WhatsApp sobre o andamento do reparo.'
+  },
+  {
+    id: 'faq-8',
+    question: 'Vocês fazem visita técnica em residências na Fazendinha?',
+    answer: 'Sim, para alguns serviços como instalação de redes, configuração de equipamentos e diagnósticos iniciais, oferecemos o serviço de visita técnica. Entre em contato para verificar disponibilidade e valores.'
+  }
+];
+
+export const DEVICES_SUPPORTED: DeviceCategory[] = [
+  {
+    category: 'Consoles',
+    brands: [
+      { brand: 'Sony', models: ['PlayStation 1', 'PlayStation 2', 'PlayStation 3', 'PlayStation 4', 'PlayStation 5', 'PSP', 'PS Vita'] },
+      { brand: 'Microsoft', models: ['Xbox', 'Xbox 360', 'Xbox One', 'Xbox Series S', 'Xbox Series X'] },
+      { brand: 'Nintendo', models: ['Switch', 'Wii', 'WiiU', '3DS', 'GameCube'] },
+      { brand: 'Retrô', models: ['Mega Drive', 'Super Nintendo', 'Master System'] },
+      { brand: 'Portáteis', models: ['Game Boy', 'DS', '3DS', 'Steam Deck'] }
+    ]
+  },
+  {
+    category: 'Notebooks e PCs',
+    brands: [
+      { brand: 'Dell', models: ['Inspiron', 'XPS', 'Alienware', 'Vostro', 'Latitude'] },
+      { brand: 'HP', models: ['Pavilion', 'Envy', 'Omen', 'Spectre', 'EliteBook'] },
+      { brand: 'Lenovo', models: ['Ideapad', 'Legion', 'ThinkPad', 'Yoga'] },
+      { brand: 'Apple', models: ['MacBook Pro', 'MacBook Air', 'iMac'] },
+      { brand: 'Asus', models: ['Zenbook', 'VivoBook', 'ROG', 'TUF Gaming'] },
+      { brand: 'Acer', models: ['Aspire', 'Nitro', 'Predator', 'Swift'] },
+      { brand: 'Samsung', models: ['Book', 'Odyssey'] }
+    ]
+  },
+  {
+    category: 'Smartphones',
+    brands: [
+      { brand: 'Apple', models: ['iPhone (todos os modelos)'] },
+      { brand: 'Samsung', models: ['Galaxy S', 'Galaxy Note', 'Galaxy A', 'Galaxy M'] },
+      { brand: 'Motorola', models: ['Moto G', 'Moto E', 'Moto Edge', 'Razr'] },
+      { brand: 'Xiaomi', models: ['Redmi', 'Poco', 'Mi', 'Note'] },
+      { brand: 'LG', models: ['Todos os modelos'] },
+      { brand: 'Asus', models: ['Zenfone', 'ROG Phone'] },
+      { brand: 'Outras marcas', models: ['Huawei', 'Realme', 'OnePlus'] }
+    ]
+  }
 ];

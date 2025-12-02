@@ -2,9 +2,10 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { MapPin, ArrowRight, Star, Shield, Cpu, Clock } from 'lucide-react';
-import { CITIES, NEIGHBORHOODS, PHONE_NUMBER } from '../constants';
+import { CITIES, NEIGHBORHOODS, PHONE_NUMBER, WHATSAPP_DEFAULT_MESSAGE } from '../constants';
 import ComparisonTable from '../components/ComparisonTable';
 import ContactForm from '../components/ContactForm';
+import FAQ from '../components/FAQ';
 
 type PageType = 'city' | 'neighborhood';
 
@@ -81,7 +82,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
                   Com mais de 15 anos de experiência, nossa equipe técnica está preparada para atender a demanda de clientes da região de {name}, oferecendo diagnósticos precisos, peças de qualidade e garantia em todos os serviços. 
                   Sabemos o quanto é importante ter seu equipamento funcionando perfeitamente, seja para trabalho ou lazer.
                 </p>
-                <img src="https://picsum.photos/seed/repair/800/400" alt={`Reparo de eletrônicos para ${name}`} className="w-full rounded-lg shadow-md my-6" />
+                <img src="https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=800" alt={`Reparo de eletrônicos para ${name}`} className="w-full rounded-lg shadow-md my-6" />
               </div>
             </div>
 
@@ -183,7 +184,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
                      Fale diretamente com o técnico pelo WhatsApp.
                    </p>
                    <a
-                     href={`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(`Olá, vim da Página de ${locationLabel} ${name}. Gostaria de um orçamento.`)}`}
+                     href={`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(WHATSAPP_DEFAULT_MESSAGE)}`}
                      className="block w-full bg-whatsapp text-white text-center font-bold py-3 rounded-lg hover:bg-green-600 transition-colors mb-4"
                    >
                      Chamar no WhatsApp
@@ -219,9 +220,11 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
 
         </div>
       </section>
-      
+
+      <FAQ />
+
       <ComparisonTable />
-      
+
       <section className="bg-gray-100 py-12">
         <div className="container mx-auto px-4">
            <ContactForm />

@@ -1,10 +1,11 @@
 import React from 'react';
-import { SERVICES, PHONE_NUMBER } from '../constants';
+import { SERVICES, PHONE_NUMBER, WHATSAPP_DEFAULT_MESSAGE } from '../constants';
 import SEO from '../components/SEO';
-import { 
-  Gamepad2, Cpu, CircuitBoard, Laptop, Smartphone, Wrench, 
-  HelpCircle, MessageCircle, CheckCircle2 
+import {
+  Gamepad2, Cpu, CircuitBoard, Laptop, Smartphone, Wrench,
+  HelpCircle, MessageCircle, CheckCircle2
 } from 'lucide-react';
+import FAQ from '../components/FAQ';
 
 // Icon mapping
 const iconMap: Record<string, React.ElementType> = {
@@ -42,7 +43,6 @@ const ServicesPage: React.FC = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {SERVICES.map((service) => {
               const IconComponent = iconMap[service.iconName] || HelpCircle;
-              const whatsappMessage = `Olá, vim da Página de Serviços. Gostaria de um orçamento para: ${service.title}`;
 
               return (
                 <div key={service.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col">
@@ -74,7 +74,7 @@ const ServicesPage: React.FC = () => {
 
                   <div className="p-6 bg-gray-50 border-t border-gray-100 mt-auto">
                     <a 
-                      href={`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`}
+                      href={`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(WHATSAPP_DEFAULT_MESSAGE)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full bg-whatsapp hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2"
@@ -90,6 +90,9 @@ const ServicesPage: React.FC = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <FAQ />
+
       {/* CTA Bottom */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 text-center">
@@ -98,7 +101,7 @@ const ServicesPage: React.FC = () => {
             Entre em contato conosco diretamente. Realizamos diversos tipos de reparos em eletrônicos e podemos analisar o seu caso específico.
           </p>
           <a
-            href={`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent('Olá, vim da Página de Serviços e gostaria de falar com um técnico')}`}
+            href={`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(WHATSAPP_DEFAULT_MESSAGE)}`}
             className="inline-flex items-center gap-2 bg-primary hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full shadow-lg transition-transform hover:-translate-y-1"
           >
             Fale com um Técnico
