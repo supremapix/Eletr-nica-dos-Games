@@ -107,7 +107,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="grid grid-cols-2 gap-4">
-               <img src="https://images.pexels.com/photos/163130/circuit-circuit-board-resistor-computer-163130.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Laboratório 1" className="rounded-lg shadow-lg w-full h-full object-cover hover-lift" />
+               <img src="https://images.pexels.com/photos/4195325/pexels-photo-4195325.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Laboratório 1" className="rounded-lg shadow-lg w-full h-full object-cover hover-lift" />
                <img src="https://images.pexels.com/photos/2582928/pexels-photo-2582928.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Laboratório 2" className="rounded-lg shadow-lg w-full h-full object-cover mt-8 hover-lift" />
             </div>
             <div>
